@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+<app-childone [dep]="dep" (customEvent)="onChildData($event)"></app-childone>
+
+<button (click)="changeName()">Change Name</button>
+<button (click)="unloadTodos($event)">Un Load</button>
+<button (click)="loadTodos($event)">Load</button>
+<div *ngFor="let todo of todos; first as firstItem; last as lastItem">
+  <app-todo [todo]="todo" [first]="firstItem" [last]="lastItem" [selected]="selected" (selectedTodo)="onSelection($event)"></app-todo>
+</div>

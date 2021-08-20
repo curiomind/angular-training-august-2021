@@ -1,0 +1,14 @@
+<ng-template [ngIf]="todo">
+  <div class="box" [ngClass]="{'completed': todo? todo.completed : false, 'selected': selected && selected.id === todo?.id}">
+    <h3 *ngIf="first">{{todo?.title | uppercase}}</h3>
+    <h3 *ngIf="!last && !first">{{todo?.title | lowercase}}</h3>
+    <h3 *ngIf="last">{{todo?.title | titlecase}}</h3>
+    <h4>{{todo?.price | currency:'$'}}</h4>
+    <h4>{{todo?.date | date:'MMMM, dd yyyy'}}</h4>
+    <pre>
+      {{todo | json}}
+    </pre>
+    <button (click)="clickMe(todo ? todo : undefined)">Click Me</button>
+  </div>
+</ng-template>
+
