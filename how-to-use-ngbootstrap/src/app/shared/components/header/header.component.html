@@ -1,0 +1,11 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink>First</a>
+    <ng-template ngbNavContent>{{ appState.tabOneContent }}</ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Second</a>
+    <ng-template ngbNavContent>{{ appState.tabTwoContent }}</ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
