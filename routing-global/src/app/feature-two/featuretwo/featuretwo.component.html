@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" routerLink="/featuretwo">Feature Two</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                routerLink="/featuretwo/pageone"
+                >Page One</a
+              >
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                routerLink="/featuretwo/pagetwo"
+                >Page Two</a
+              >
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                routerLink="/featuretwo/pagethree"
+                >Page Three</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <ng-container *ngIf="isFeatureHome">
+        <h2>Feature Two (Root)</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          elementum consectetur elementum. Cras a porta eros, eget sodales
+          nulla. Nunc tincidunt, dolor a molestie pulvinar, elit turpis
+          hendrerit est, ac efficitur orci nunc vel sem. Integer consectetur leo
+          ante. Nulla nec nunc nunc. Fusce dignissim rutrum dignissim. Proin
+          vitae accumsan turpis. Pellentesque turpis urna, molestie ut diam eu,
+          imperdiet malesuada lorem. Maecenas erat libero, elementum vitae nunc
+          eu, pellentesque euismod odio. Cras placerat suscipit felis, nec
+          hendrerit ipsum tempor id. Praesent egestas mattis nibh ac ultrices.
+          Aliquam tincidunt tincidunt ante, id dapibus massa ornare in. Nulla
+          hendrerit dolor in metus mollis posuere. Sed pretium nibh lacus.
+        </p>
+      </ng-container>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

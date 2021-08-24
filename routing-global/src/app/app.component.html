@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button
@@ -29,7 +29,24 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" routerLink="/formone" routerLinkActive="active"
+            >Form One</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/formtwo" routerLinkActive="active"
+            >Form Two</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/featureone" routerLinkActive="active"
+            >Feature One</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/featuretwo" routerLinkActive="active"
+            >Feature Two</a
+          >
         </li>
         <li class="nav-item dropdown">
           <a
@@ -39,13 +56,74 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            [ngClass]="featureActiveClass"
           >
-            Dropdown link
+            Feature One Pages
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/featureone/pageone"
+                >Page One</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/featureone/pagetwo"
+                >Page Two</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/featureone/pagethree"
+                >Page Three</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            [ngClass]="activeClass"
+          >
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/product/1"
+                >Product One</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/product/2"
+                >Product Two</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                routerLink="/product/3"
+                >Product Three</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
@@ -54,5 +132,67 @@
 </nav>
 
 <router-outlet></router-outlet>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <button class="btn btn-danger" (click)="createError()">
+        Create Error
+      </button>
+    </div>
+    <div class="col-auto">
+      <button (click)="goToProduct(1)" class="btn btn-primary">
+        Product One
+      </button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-lg" appChangeclass="btn-primary">
+        Turn to Success
+      </button>
+    </div>
+  </div>
+</div>
+<hr />
 
-<button class="btn btn-danger" (click)="createError()">Create Error</button>
+<div class="container">
+  <div class="row">
+    <div class="col-auto">
+      <button class="btn btn-info" (click)="allowActivatingAbout()">
+        {{
+          auth.AllowActivate
+            ? "Disallow Activating About"
+            : "Allow Activating About"
+        }}
+      </button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-info" (click)="allowDeActivatingAbout()">
+        {{
+          auth.AllowDeActivate
+            ? "Disallow DeActivating About"
+            : "Allow DeActivating About"
+        }}
+      </button>
+    </div>
+
+    <div class="col-auto">
+      <button class="btn btn-primary" (click)="allowActivatingProduct()">
+        {{
+          auth.AllowActivateChild
+            ? "Disallow Activating Product"
+            : "Allow Activating Product"
+        }}
+      </button>
+    </div>
+
+    <div class="col-auto">
+      <button class="btn btn-success" (click)="allowLoadingFeatureTwo()">
+        {{
+          auth.AllowLoadingChild
+            ? "Disallow Loading Feature Two"
+            : "Allow Loading Feature Two"
+        }}
+      </button>
+    </div>
+  </div>
+</div>

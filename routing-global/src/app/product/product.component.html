@@ -1,0 +1,11 @@
+<div class="container mb-4 pt-4" *ngIf="!this.productParent">
+  <div class="row">
+    <div class="col">
+      <h2>{{ post?.title }}</h2>
+      <p>{{ post?.body }}</p>
+    </div>
+  </div>
+</div>
+
+<h2 *ngIf="this.productParent">{{ post?.title }}</h2>
+<p *ngIf="this.productParent">{{ post?.body }}</p>

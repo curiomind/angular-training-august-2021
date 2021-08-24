@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form #emp="ngForm" (ngSubmit)="onFormSubmit(emp)">
+        <div class="mb-3">
+          <label for="firstname" class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstname"
+            [(ngModel)]="fName"
+            (ngModelChange)="onFirstNameChange($event)"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastname"
+            ngModel
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="empId" class="form-label">Employee Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="empId"
+            name="empId"
+            [(ngModel)]="employeeId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select
+            name="country"
+            class="form-control"
+            [(ngModel)]="country"
+            (ngModelChange)="onCountryChange($event)"
+          >
+            <option ngValue="IN">India</option>
+            <option ngValue="USA">United States of America</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <pre>{{ emp.value | json }}</pre>
+        <p>Employee Id: {{ employeeId }}</p>
+      </form>
+    </div>
+  </div>
+</div>
